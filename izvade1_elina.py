@@ -1,0 +1,11 @@
+print('Sekos tukša rinda') # Elina Teilane
+print()
+print('Visi vārdi vienā rindā')
+print('Visi ',end='')
+print('vārdi ',end='')
+print('vienā ',end='')
+print('rindā ',end='')
+print()
+print('  *')
+print(' * *')
+print('*****')
