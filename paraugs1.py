@@ -1,13 +1,21 @@
-#izvediot 2 sarakstus
-mans_saraksts = ['svece',2, 'kakis']
-print('1 Saraksts:',mans_saraksts)
+'''def atnemsana(): #funkcija netiek nodoti parametri
+    print(34-4)
 
-tavs_saraksts = ['kafija','braunijs','karstmaize']
-print('3. elements: ', tavs_saraksts[2])
+print('Sveika, ziema!')
+atnemsana() # funkcijas atnemsana() pie izsuakšanas izvada rezultātu 30'''
 
-vardi = ['Alise', 'Peteris', 'Katrina']
-for vienums in vardi:
-    print('Šveiki,', vienums)
+#funkcijai 'plus' tiek padoti 2 parametri
+#konsolē jāparāda summa
+#funkciju izsauc, norādot šis 2 vertibas(argumenti)
 
-lielais_saraksts = mans_saraksts + tavs_saraksts
-print(lielais_saraksts)
+def plus(num1, num2):
+    print(num1+num2)
+plus(4,5)
+
+#nodefinēt f-ja reizināt(), iedodot parametru num1
+def reizinat(num1):
+    return num1*8
+rez = reizinat(8)
+print(rez)
+#izsauc f-ju nodot skailti 8 ka argumentu num 1 un 
+#funkcijas izsaukumu piesķir mainīgajam rez
