@@ -1,0 +1,5 @@
+Riga
+Marupe
+Sigulda
+Hello, World
+{'\nSomija': 'Helsinki', '\nIgaunija': 'Tallina', '\nLatvija': 'Riga'}

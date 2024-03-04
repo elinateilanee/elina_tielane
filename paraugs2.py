@@ -1,12 +1,21 @@
-krasas = ['rozā','dzeltens','balts','zils']
-jauns = []
-for i in krasas:
-    burti = 0
-    for burts in i:
-        burti += 1
-    pagaidu_saraksts = [i, burti]
-    jauns.append(pagaidu_saraksts)
-print(jauns)
+''''laut ievadit tekstu, ierakstit to faila
+'teksta_fails.txt' Ievadit skaitli, papildinat
+failu ar so skaitli, katru rindu sakot ar 
+'Papildus rindas nr'''
 
-for krasa in krasas:
-    print(krasa,len(krasa))
+def ierakstit_faila():
+    teksts = input('Ievadiet teikumu: ')
+
+    with open("teksta_fails.txt",'w', encoding='utf8') as file:
+        file.write(teksts)
+
+def papildus_skaitlis():
+    skaitlis=int(input('Ievadiet vesalus skaitlus: '))
+    
+    #a rezims update datus
+    with open("teksta_fails.txt",'a', encoding='utf8') as file:
+        for i in range(skaitlis):
+            file.write(f"\nPapildus rinda nr. {i+1}")
+
+ierakstit_faila()  
+papildus_skaitlis()
