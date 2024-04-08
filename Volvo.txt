@@ -1,0 +1,5 @@
+Mašīnas nosaukums: Volvo
+Gads: 2023
+Modelis: B4
+Cena: 1222
+

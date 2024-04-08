@@ -1,0 +1,5 @@
+Mašīnas nosaukums: Saond
+Gads: 2024
+Modelis: A2
+Cena: 3330
+
