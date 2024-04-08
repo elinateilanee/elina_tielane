@@ -1,23 +1,51 @@
-#uzrakstit program. kas lasa katru rindinu un sadal to vārdos
-#programma parbauda vai ir pietiekams datu skaits, lai izvaditu informaciju un pec tam izvada datus uz ekrana
+#atvērt failu skaitli.txt(šajā gadījumā fails tiek izveidots, jo ir w režīms)
+with open("skaitli.txt", "w") as fails:
+    print("Ievadiet skaitļus failā(katru skaitli ievadiet jaunā rindiņā.")
+    print("Ievadiet tukšu rindiņu, lai pabeigtu ievadi.")
+    
+    while True:
+        skaitlu_ievade = input("Ievadiet skaitli: ")
+        if skaitlu_ievade == "": #ja ievada tukšu rindu, tad tiek pabeigta ievade (ja vēlas, var aizstāt ar stop vai iziet utt)
+            break
+        fails.write(skaitlu_ievade + "\n") #tiek nolasīti lietotāja ievadītie skaitļi un ierakstīti failā
 
-faila_nosaukums= 'dati3,txt'
+with open("skaitli.txt", "r") as fails: #ar r režīmu nolasa faila saturu, encoding pie skaitļiem teorētiski nebūtu vajadzīgs
+    rindas = fails.readlines() #nolasa faila saturu un sadala pa rindām
 
-try:
-    with open(faila_nosaukums,'r', encoding='utf8') as fails:
-#3- katru rindu sadala pa vardiem izmantojot atstarpes ka atdalitajus
-        for rinda in fails:
-            dati = rinda.split()
-#4 - parbaudit vai ir pietiekams datu skaits(vards,uzverds,vecums)
-            if len(dati) >= 3:
-                vards = dati[0]
-                uzvards = dati[1]
-                vecums = dati[2]
-#5 - parādīt datus uz ekreāna
-                print(f'Vārds:{vards}','Uzvards:{uzvards}','Vecums:{vecums}')
-            else: 
-                print('Kluda faila nepietiek datu.')
-except FileNotFoundError:
-    print(f'Kluda: Fails'{faila_nosaukums}'nav atrasts.')
-except Exception as e:
-    print(f'Kluda:Neparedzeta kluda = {e}' )
+#mainīgie, kas glabās rezultātu(pozitīvo, negatīvo sk summa, cik ir pozitīvo un cik ir negatīvo skaitļu)
+poz_summa = 0
+neg_summa = 0
+poz_skaits = 0
+neg_skaits = 0
+
+for rinda in rindas:#iziet cauri rindām
+    skaitlits = int(rinda.strip()) #rinda tiek pārbeidota par veselu skaitli
+
+    if skaitlits > 0:
+        poz_summa += skaitlits
+        poz_skaits += 1
+    elif skaitlits < 0:
+        neg_summa += skaitlits
+        neg_skaits += 1 #ifā ielitka skaitļu pārbaude
+
+print("➕ skaitļu summa:", poz_summa)
+print("➖ skaitļu summa:", neg_summa)
+print("➕ skaitļu skaits:", poz_skaits)
+print("➖ skaitļu skaits:", neg_skaits)
+
+#šeit tiek izdrukāta vidējā vērtība poz skaitļiem un neg skaitļiem
+if poz_skaits > 0:
+    print("Vidējais pozitīvais skaitlis:", poz_summa / poz_skaits)
+else:
+    print("Nav pozitīvu skaitļu")
+if neg_skaits > 0:
+    print("Vidējais negatīvais skaitlis:", neg_summa / neg_skaits)
+else:
+    print("Nav negatīvu skaitļu")
+
+    #darbu būtu vērts papildināt līdzīgi kā recepšu failu-ar izņēmumiem, ja fails ir tukšs vai tāda faila nav utt
+    #tāpat arī būtu jāpārbauda vai lietotājs tiešām ievada skaitļus
+    
+    #except ValueError:
+    #print("Jāievada skaitlis.")
+    #exit() 

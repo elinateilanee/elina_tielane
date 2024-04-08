@@ -14,8 +14,7 @@ def saglabat_recepti():
             break
         kalorijas= float(input('Ievadiet kaloriju daudzumu: '))
         receptes[nosaukums]=kalorijas
-
-    with open('receptes.txt','w',encoding='utf8') as fails:
+    with open('receptes.txt','w+',encoding='utf8') as fails:   
         for nosaukums,kalorijas in receptes.items():
             fails.write(f"{nosaukums}: {kalorijas}\n")
 

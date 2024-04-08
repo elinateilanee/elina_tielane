@@ -1,0 +1,5 @@
+Podesta garums: 34.0 platums: 23.0 augstums: 23.0 skaits: 5
+	Apreikini matrialu daudzumiem
+Listes daudzums: 60 
+Sturu daudzums:40 
+ Plaksnu daudzums: 0.0012512Podesta garums: 23.0 platums: 1.0 augstums: 2.0 skaits: 2
