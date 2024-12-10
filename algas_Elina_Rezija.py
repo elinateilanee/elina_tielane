@@ -1,0 +1,2 @@
+
+def ievadiet_datus():
